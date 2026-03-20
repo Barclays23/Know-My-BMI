@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import appleImg from './assets/images/green-apple1.png'
 
 // ── DATA ──────────────────────────────────────────────────────────────
 function getBMICat(bmi) {
@@ -231,14 +232,75 @@ function Header() {
   )
 }
 
+// function Hero() {
+//   return (
+//     <div className="hero">
+//       <div className="hero-eyebrow">✦ Free · Accurate · No Signup</div>
+//       <h1>Know Your Body.<br /><em>Transform</em> Your Life.</h1>
+//       <p>Advanced BMI analysis with personalized diet &amp; exercise plans — built for real results, not generic advice.</p>
+//       <svg className="hero-wave" viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+//         <path d="M0 48L1440 48L1440 12C1200 40 960 4 720 20C480 36 240 8 0 28L0 48Z" fill="#f7f4ef" />
+//       </svg>
+//     </div>
+//   )
+// }
+
+// ── HOW TO USE ──────────────────────────────────────────────────────
+// 1. Copy green-apple.png into:  knowmybmi/src/assets/green-apple.png
+// 2. Add this import at the TOP of App.jsx (after existing imports):
+//       import appleImg from './assets/green-apple.png'
+// 3. Replace your Hero() function in App.jsx with the one below
+// 4. Replace the .hero section in index.css with the CSS from hero-styles.css
+// ────────────────────────────────────────────────────────────────────
+
 function Hero() {
   return (
     <div className="hero">
-      <div className="hero-eyebrow">✦ Free · Accurate · No Signup</div>
-      <h1>Know Your Body.<br /><em>Transform</em> Your Life.</h1>
-      <p>Advanced BMI analysis with personalized diet &amp; exercise plans — built for real results, not generic advice.</p>
-      <svg className="hero-wave" viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 48L1440 48L1440 12C1200 40 960 4 720 20C480 36 240 8 0 28L0 48Z" fill="#f7f4ef" />
+
+      {/* Soft glow ring behind apple */}
+      <div className="hero-apple-ring" />
+
+      {/* Apple — large, faded, slow floating animation */}
+      <img
+        src={appleImg}
+        alt=""
+        className="hero-apple"
+        draggable="false"
+      />
+
+      {/* Hero text content */}
+      <div className="hero-content">
+        <div className="hero-eyebrow">✦ Free · Accurate · No Signup</div>
+
+        <h1>
+          Know Your Body.<br />
+          <em>Transform</em> Your Life.
+        </h1>
+
+        <p className="hero-desc">
+          Advanced BMI analysis with personalized diet &amp; exercise plans —
+          built for real results, not generic advice.
+        </p>
+
+        <div className="hero-pills">
+          <div className="hero-pill"><span>⚡</span> Instant Results</div>
+          <div className="hero-pill"><span>🎯</span> Personalized Plans</div>
+          <div className="hero-pill"><span>🔒</span> No Account Needed</div>
+          <div className="hero-pill"><span>🥗</span> Diet + Exercise</div>
+        </div>
+      </div>
+
+      {/* Bottom wave transition */}
+      <svg
+        className="hero-wave"
+        viewBox="0 0 1440 48"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 48L1440 48L1440 12C1200 40 960 4 720 20C480 36 240 8 0 28L0 48Z"
+          fill="#f7f4ef"
+        />
       </svg>
     </div>
   )
