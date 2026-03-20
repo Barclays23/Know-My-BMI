@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 import appleImg from './assets/images/green-apple1.png'
 
+
+
 // ── DATA ──────────────────────────────────────────────────────────────
 function getBMICat(bmi) {
   if (bmi < 16)   return { label: 'Severely Underweight', color: '#e74c3c', emoji: '⚠️' }
@@ -29,6 +31,7 @@ function getBodyFat(bmi, age, sex) {
     : 1.20 * bmi + 0.23 * age - 5.4
   return Math.max(5, Math.round(bf))
 }
+
 
 function getDietData(goal, targetCal, wKg) {
   const protein = goal === 'gain' ? Math.round(wKg * 2.2) : goal === 'lose' ? Math.round(wKg * 2.0) : Math.round(wKg * 1.8)
