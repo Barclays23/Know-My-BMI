@@ -33,7 +33,7 @@ export default function App() {
       />
       <Header/>
       <Hero/>
-      <main className="max-w-content mx-auto px-[13%] pt-12 pb-20">
+      <main className="max-w-content mx-auto px-[11%] pt-12 pb-20">
         <Calculator ref={calculatorRef} onResults={setResults} />
         {results && <Results data={results} calculatorRef={calculatorRef}/>}
       </main>
